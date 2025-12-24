@@ -1,10 +1,11 @@
-
+--1
 create view  stdAndcourse
 as 
 select s.st_id , crs_name from  Student  s join stud_course x
 on s.st_id = x.st_id  join Course  c on  c.Crs_Id = x.crs_id 
 where  x.Grade >50 
 ---------------------------------------
+--2
 alter  view  v_Manager_Topics
 WITH ENCRYPTION 
 as 
@@ -19,6 +20,7 @@ select * from v_Manager_Topics
 sp_helptext 'v_Manager_Topics'   
 
 ------------------------
+--3
 CREATE VIEW v_java_SD_Instructor 
 as
 select ins_name ,dept_name from Instructor i join Department d
@@ -26,6 +28,7 @@ on d.Dept_Id = i.Dept_Id
 where Dept_Name in ('SD','JAVA')
 
 ---------------------------------------------------------------
+--4
 create view V1 
 as
 select * from Student 
@@ -33,6 +36,7 @@ where st_address in ('Alex' , 'Cairo')
 with check option 
 
 -----------------------------------------------
+-- 5
 create view  V_projectName_numofEmp
 as
 select projectname  , count(e.empNo) as [ num of employees ]  from company.PROJECT  p join  works_on w
@@ -41,11 +45,13 @@ on w.EmpNo = e.empNo
 group by projectname
 
 --==========================================
+-- 6
 create  clustered  index i3  on  Department (manager_hiredate)
 
 --  error can not create anthor  clustered   there is one already (primary key )
 
 --========================================================================================
+-- 7
 
 create unique index i_age   on student (st_age)
 --   error  ( because the unique constraint applies to existing and new data. ) 
