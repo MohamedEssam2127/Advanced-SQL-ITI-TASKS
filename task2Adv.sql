@@ -9,7 +9,7 @@ END;
 SELECT dbo.GetMonthName('2025-10-22');
 
 
-
+--2
 create function betweenTwoNums (@x int, @y int)
 RETURNS @t table  (nums int)
 AS
@@ -25,7 +25,7 @@ end;
 SELECT * FROM dbo.betweenTwoNums(1, 5);
 
 
-
+--3 
 create function getDepartName (@id int )
 returns table
 as 
@@ -37,7 +37,7 @@ as
 
    select * from dbo.getDepartName(3)
 
-
+--4 
    CREATE FUNCTION checkNameNUlls (@id int)
 RETURNS VARCHAR(60)
 AS
@@ -58,6 +58,8 @@ BEGIN
 END;
 
 SELECT dbo.checkNameNulls(1)
+
+--6.5
 
 create function managerDetails (@id int )
 returns table
